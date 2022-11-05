@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>想法</title>
+    <url>/2022/11/05/%E6%83%B3%E6%B3%95/</url>
+    <content><![CDATA[<p>记录从此开始</p>
+]]></content>
+      <tags>
+        <tag>Self</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Blog搭建指南汇总</title>
     <url>/2022/11/05/Blog%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97%E6%B1%87%E6%80%BB/</url>
     <content><![CDATA[<p>花了一点时间搭个小博客，也间接强迫自己做一些知识和思考的输出，主要记录一些图形渲染方面的内容吧，工作三年还是有不少收获，常写常新</p>
@@ -29,14 +38,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>想法</title>
-    <url>/2022/11/05/%E6%83%B3%E6%B3%95/</url>
-    <content><![CDATA[<p>记录从此开始</p>
-]]></content>
-      <tags>
-        <tag>Self</tag>
-      </tags>
   </entry>
 </search>
