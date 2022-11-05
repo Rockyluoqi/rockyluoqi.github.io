@@ -1,5 +1,0 @@
-http://example.com/2022/11/05/%E6%83%B3%E6%B3%95/
-http://example.com/categories/index.html
-http://example.com/2022/11/05/hello-world/
-http://example.com/
-http://example.com/tags/Self/
