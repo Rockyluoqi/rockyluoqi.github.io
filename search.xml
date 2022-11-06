@@ -1,194 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Blog搭建指南汇总</title>
-    <url>/2022/11/05/Blog%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<p>花了一点时间搭个小博客，也间接强迫自己做一些知识和思考的输出，主要记录一些图形渲染方面的内容吧，工作三年还是有不少收获，常写常新</p>
-<h4 id="博客搭建From-zlp">博客搭建From zlp</h4>
-<p><a href="https://imzlp.com/posts/58952/">https://imzlp.com/posts/58952/</a></p>
-<h4 id="个人域名申请">个人域名申请</h4>
-<p>腾讯云</p>
-<blockquote>
-<p>有一点需要注意，在设置dsn解析的时候最好都用cname，这样方便后面设置https<br>
-升级https在github.io的setting里面可以直接设置，很方便</p>
-</blockquote>
-<h4 id="做SEO">做SEO</h4>
-<p><a href="http://duansm.top/2018/08/08/hexo-sitemap/">http://duansm.top/2018/08/08/hexo-sitemap/</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>想法</title>
-    <url>/2022/11/05/%E6%83%B3%E6%B3%95/</url>
-    <content><![CDATA[<p>记录从此开始</p>
-]]></content>
-      <tags>
-        <tag>Self</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>UE5 Release的重要feature</title>
-    <url>/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/</url>
-    <content><![CDATA[<p><a href="https://docs.unrealengine.com/5.0/zh-CN/unreal-engine-5-0-release-notes/">UE5 release note</a><br>
-从UE5的release note里面摘取一些重要的feature和bug修复及优化，当作是一个release note阅读笔记</p>
-<span id="more"></span>
-<h4 id="Feature">Feature</h4>
-<ul>
-<li>luman nanite不用多说</li>
-<li>VSM，移动端有无可能？</li>
-<li>Temporal Super Resolution代替taa，1080-&gt;4k，降低taa重影</li>
-<li><strong>局部曝光处理Local Exposure，精细调节局部曝光</strong></li>
-<li><strong>world partition</strong>重点关注，数据层概念，actor文件
-<ul>
-<li>自动网格化的hlod，自动创建数据驱动的自定义hlod层，优化加载区外的大量静态actor</li>
-<li>大世界坐标</li>
-</ul>
-</li>
-<li>chaos布料+物理场</li>
-<li>Unreal Insights更新
-<ul>
-<li><strong>Memory Insights</strong></li>
-<li><strong>Task Graph Insights</strong>可以看到task的关系，牛逼</li>
-<li>上下文切换</li>
-</ul>
-</li>
-</ul>
-<p>移动平台</p>
-<ul>
-<li>android文件服务器</li>
-<li><strong>android二进制文件改进</strong></li>
-<li>gles3.2 + vulkan dxc</li>
-<li>sss</li>
-<li><strong>dfshadow</strong></li>
-<li>csm cache</li>
-<li>skinCache</li>
-<li><strong>GPU Scene Instancing</strong>，动态实例化物体</li>
-</ul>
-<h4 id="Bug-Fix">Bug Fix</h4>
-<p>重点关注移动端和rendering</p>
-<h4 id="Optimization">Optimization</h4>
-<h4 id="Mobile-Rendering"><strong>Mobile Rendering</strong></h4>
-<p>New:</p>
-<ul>
-<li>
-<p>The mobile deferred and forward lighting calculations are now unified.</p>
-</li>
-<li>
-<p>Added an option to use high quality BRDF on mobile, same as with PC.</p>
-</li>
-<li>
-<p>If a light shading model is not supported on mobile, it will now fall back to the default light shading model.</p>
-</li>
-<li>
-<p>Use EnvBrdf for mobile deferring lighting pass.</p>
-</li>
-<li>
-<p>Mobile now supports the Subsurface and PreIntegrated Skin shading models. Subsurface Profile shading on mobile uses preintegral burley diffusion on ring, just like the PreIntegrated Skin but could be generated at runtime based on Burley inputs.</p>
-</li>
-<li>
-<p>Vulkan now uses G8 format for mobile Ground Truth Ambient Occlusion (GTAO). Enabled mobile AO and PPR on high-end mobile devices.</p>
-</li>
-<li>
-<p>Added support for Mobile Deferred Rendering mode on Android OpenGL ES.</p>
-</li>
-<li>
-<p>Integrated Signed Distance Fields to Mobile Deferred Renderer.</p>
-</li>
-<li>
-<p>Added GL_MAX_TEXTURE_BUFFER_SIZE to OpenGLES.h to not depend on the extension GL_MAX_TEXTURE_BUFFER_SIZE_EXT.</p>
-</li>
-<li>
-<p>The variable r.MobileNumDynamicPointLights is now read from the platform .ini file instead of from the project console variable. The console variable r.MobileNumDynamicPointLights was added to the shader keystring.</p>
-</li>
-<li>
-<p>Disabled Parallel RDG for Mobile Platforms from the RenderGraph.</p>
-</li>
-<li>
-<p>Hair Materials now directly use the Hair Shading Model instead of doing so with a FeatureLevelSwitchExpression, improving hair Shading Model support on mobile.</p>
-</li>
-<li>
-<p>Added support for a Skin Cache on mobile platforms.</p>
-</li>
-<li>
-<p>Set Fast Approximate Anti-Aliasing (FXAA) quality to 0 on mobile platforms by default.</p>
-</li>
-<li>
-<p>Added an option for projects to disable support for per-pixel Material shading models on mobile platforms. Use the console variable r.Mobile.AllowPerPixelShadingModels=0.</p>
-</li>
-<li>
-<p>Account for Reflection Capture influence radius when finding closest capture for an object. Fallback to skylight reflection when there are no influencing Reflection Captures on mobile platforms.</p>
-</li>
-<li>
-<p>Removed perspective correct shadow depth shader permutation when its not required on mobile platforms</p>
-</li>
-</ul>
-<p>Improvement:</p>
-<ul>
-<li>Removed NoLightMap shader permutation for Materials that are not using it on mobile platforms.</li>
-</ul>
-<p>Crash Fix:</p>
-<ul>
-<li>Fixed a crash on mobile while rendering custom depth primitives that require scene texture access.</li>
-</ul>
-<p>Bug Fix:</p>
-<ul>
-<li>
-<p>Fixed an issue where the brightness of the Reflection Captures couldn’t be changed at runtime on mobile.</p>
-</li>
-<li>
-<p>Fixed the specular artifacts that would occur on Snapdragon 845 devices.</p>
-</li>
-<li>
-<p>Disabled mobile MSAA if DepthFullPrepass is enabled.</p>
-</li>
-<li>
-<p>Fixed an issue where depth was not stored with fullprepass enabled.</p>
-</li>
-<li>
-<p>Fixed an issue with incorrect depth stencil access flag in mobile multi-view rendering.</p>
-</li>
-<li>
-<p>Integrated mobile Static Lighting when Distance Fields are enabled.</p>
-</li>
-<li>
-<p>Enqueue FrameSyncEvent ReleaseResource on the Render Thread when in the RHI thread in OpenGLViewport.</p>
-</li>
-<li>
-<p>Resolved a Depth issue with Editor Primitives in Mobile Preview.</p>
-</li>
-<li>
-<p>Implemented a Binary Cache fix for the Compute shader and fixed calculation of ShaderLib Processing time.</p>
-</li>
-<li>
-<p>Fixed a bug that caused Editor to stall in the Material Editor while in Mobile Preview.</p>
-</li>
-<li>
-<p>Fixed Custom Stencil and Depth on mobile by making them not always memoryless. This changes the logic back to the way it was implemented in SceneRenderTargets.</p>
-</li>
-<li>
-<p>Resolve issues with texture mip generation at runtime on Android devices running Vulkan.</p>
-</li>
-<li>
-<p>Resolved an issue preventing PerlinNoise3D texture from correctly initializing on mobile platforms.</p>
-</li>
-<li>
-<p>Allow access to CustomDepth and CustomStencil textures in Decal Materials for mobile platforms.</p>
-</li>
-</ul>
-<p>Removed:</p>
-<ul>
-<li>
-<p>Removed IsMobileDistanceFieldShadowingEnabled.</p>
-</li>
-<li>
-<p>Removed the shader define MOBILE_PROPAGATE_ALPHA, and temporarily removed premultiply alpha. FXAA luminance calculation was moved from the tonemapper to FXAA when MobilePropagateAlpha is enabled.</p>
-</li>
-<li>
-<p>Removed the OpacitySceneCapturePass from MobileSceneCapture since Depth is now stored in a different Render target. Moved everything to the shared SceneCaptureRendering file and removed MobileSceneCapture.usf.</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Unreal Engine 5, UE5</tag>
-      </tags>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title>UE5 Release的重要feature</title>
+      <link href="/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/"/>
+      <url>/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://docs.unrealengine.com/5.0/zh-CN/unreal-engine-5-0-release-notes/">UE5 release note</a><br>从UE5的release note里面摘取一些重要的feature和bug修复及优化，当作是一个release note阅读笔记</p><span id="more"></span><h4 id="Feature">Feature</h4><ul><li>luman nanite不用多说</li><li>VSM，移动端有无可能？</li><li>Temporal Super Resolution代替taa，1080-&gt;4k，降低taa重影</li><li><strong>局部曝光处理Local Exposure，精细调节局部曝光</strong></li><li><strong>world partition</strong>重点关注，数据层概念，actor文件<ul><li>自动网格化的hlod，自动创建数据驱动的自定义hlod层，优化加载区外的大量静态actor</li><li>大世界坐标</li></ul></li><li>chaos布料+物理场</li><li>Unreal Insights更新<ul><li><strong>Memory Insights</strong></li><li><strong>Task Graph Insights</strong>可以看到task的关系，牛逼</li><li>上下文切换</li></ul></li></ul><p>移动平台</p><ul><li>android文件服务器</li><li><strong>android二进制文件改进</strong></li><li>gles3.2 + vulkan dxc</li><li>sss</li><li><strong>dfshadow</strong></li><li>csm cache</li><li>skinCache</li><li><strong>GPU Scene Instancing</strong>，动态实例化物体</li></ul><h4 id="Bug-Fix">Bug Fix</h4><p>重点关注移动端和rendering</p><h4 id="Optimization">Optimization</h4><h4 id="Mobile-Rendering"><strong>Mobile Rendering</strong></h4><p>New:</p><ul><li><p>The mobile deferred and forward lighting calculations are now unified.</p></li><li><p>Added an option to use high quality BRDF on mobile, same as with PC.</p></li><li><p>If a light shading model is not supported on mobile, it will now fall back to the default light shading model.</p></li><li><p>Use EnvBrdf for mobile deferring lighting pass.</p></li><li><p>Mobile now supports the Subsurface and PreIntegrated Skin shading models. Subsurface Profile shading on mobile uses preintegral burley diffusion on ring, just like the PreIntegrated Skin but could be generated at runtime based on Burley inputs.</p></li><li><p>Vulkan now uses G8 format for mobile Ground Truth Ambient Occlusion (GTAO). Enabled mobile AO and PPR on high-end mobile devices.</p></li><li><p>Added support for Mobile Deferred Rendering mode on Android OpenGL ES.</p></li><li><p>Integrated Signed Distance Fields to Mobile Deferred Renderer.</p></li><li><p>Added GL_MAX_TEXTURE_BUFFER_SIZE to OpenGLES.h to not depend on the extension GL_MAX_TEXTURE_BUFFER_SIZE_EXT.</p></li><li><p>The variable r.MobileNumDynamicPointLights is now read from the platform .ini file instead of from the project console variable. The console variable r.MobileNumDynamicPointLights was added to the shader keystring.</p></li><li><p>Disabled Parallel RDG for Mobile Platforms from the RenderGraph.</p></li><li><p>Hair Materials now directly use the Hair Shading Model instead of doing so with a FeatureLevelSwitchExpression, improving hair Shading Model support on mobile.</p></li><li><p>Added support for a Skin Cache on mobile platforms.</p></li><li><p>Set Fast Approximate Anti-Aliasing (FXAA) quality to 0 on mobile platforms by default.</p></li><li><p>Added an option for projects to disable support for per-pixel Material shading models on mobile platforms. Use the console variable r.Mobile.AllowPerPixelShadingModels=0.</p></li><li><p>Account for Reflection Capture influence radius when finding closest capture for an object. Fallback to skylight reflection when there are no influencing Reflection Captures on mobile platforms.</p></li><li><p>Removed perspective correct shadow depth shader permutation when its not required on mobile platforms</p></li></ul><p>Improvement:</p><ul><li>Removed NoLightMap shader permutation for Materials that are not using it on mobile platforms.</li></ul><p>Crash Fix:</p><ul><li>Fixed a crash on mobile while rendering custom depth primitives that require scene texture access.</li></ul><p>Bug Fix:</p><ul><li><p>Fixed an issue where the brightness of the Reflection Captures couldn’t be changed at runtime on mobile.</p></li><li><p>Fixed the specular artifacts that would occur on Snapdragon 845 devices.</p></li><li><p>Disabled mobile MSAA if DepthFullPrepass is enabled.</p></li><li><p>Fixed an issue where depth was not stored with fullprepass enabled.</p></li><li><p>Fixed an issue with incorrect depth stencil access flag in mobile multi-view rendering.</p></li><li><p>Integrated mobile Static Lighting when Distance Fields are enabled.</p></li><li><p>Enqueue FrameSyncEvent ReleaseResource on the Render Thread when in the RHI thread in OpenGLViewport.</p></li><li><p>Resolved a Depth issue with Editor Primitives in Mobile Preview.</p></li><li><p>Implemented a Binary Cache fix for the Compute shader and fixed calculation of ShaderLib Processing time.</p></li><li><p>Fixed a bug that caused Editor to stall in the Material Editor while in Mobile Preview.</p></li><li><p>Fixed Custom Stencil and Depth on mobile by making them not always memoryless. This changes the logic back to the way it was implemented in SceneRenderTargets.</p></li><li><p>Resolve issues with texture mip generation at runtime on Android devices running Vulkan.</p></li><li><p>Resolved an issue preventing PerlinNoise3D texture from correctly initializing on mobile platforms.</p></li><li><p>Allow access to CustomDepth and CustomStencil textures in Decal Materials for mobile platforms.</p></li></ul><p>Removed:</p><ul><li><p>Removed IsMobileDistanceFieldShadowingEnabled.</p></li><li><p>Removed the shader define MOBILE_PROPAGATE_ALPHA, and temporarily removed premultiply alpha. FXAA luminance calculation was moved from the tonemapper to FXAA when MobilePropagateAlpha is enabled.</p></li><li><p>Removed the OpacitySceneCapturePass from MobileSceneCapture since Depth is now stored in a different Render target. Moved everything to the shared SceneCaptureRendering file and removed MobileSceneCapture.usf.</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Unreal Engine 5, UE5 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Blog搭建指南汇总</title>
+      <link href="/2022/11/05/Blog%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97%E6%B1%87%E6%80%BB/"/>
+      <url>/2022/11/05/Blog%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97%E6%B1%87%E6%80%BB/</url>
+      
+        <content type="html"><![CDATA[<p>花了一点时间搭个小博客，也间接强迫自己做一些知识和思考的输出，主要记录一些图形渲染方面的内容吧，工作三年还是有不少收获，常写常新</p><span id="more"></span><h4 id="博客搭建From-zlp">博客搭建From zlp</h4><p><a href="https://imzlp.com/posts/58952/">https://imzlp.com/posts/58952/</a></p><h4 id="个人域名申请">个人域名申请</h4><p>腾讯云</p><blockquote><p>有一点需要注意，在设置dsn解析的时候最好都用cname，这样方便后面设置https<br>升级https在github.io的setting里面可以直接设置，很方便</p></blockquote><h4 id="做SEO">做SEO</h4><p><a href="http://duansm.top/2018/08/08/hexo-sitemap/">http://duansm.top/2018/08/08/hexo-sitemap/</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>想法</title>
+      <link href="/2022/11/05/%E6%83%B3%E6%B3%95/"/>
+      <url>/2022/11/05/%E6%83%B3%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>记录从此开始</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Self </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
