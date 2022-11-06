@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"imrocky.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus 评论","order":-1}},"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Rendering garden.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rocky Matrix">
-<meta property="og:url" content="https://imrocky.com/archives/2022/index.html">
+  <meta name="description" content="UE5 release note 从UE5的release note里面摘取一些重要的feature和bug修复及优化，当作是一个release note阅读笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UE5 Release的重要feature">
+<meta property="og:url" content="https://imrocky.com/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/index.html">
 <meta property="og:site_name" content="Rocky Matrix">
-<meta property="og:description" content="Rendering garden.">
+<meta property="og:description" content="UE5 release note 从UE5的release note里面摘取一些重要的feature和bug修复及优化，当作是一个release note阅读笔记">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-06T10:56:28.000Z">
+<meta property="article:modified_time" content="2022-11-06T11:14:39.732Z">
 <meta property="article:author" content="Rocky">
-<meta property="article:tag" content="UnrealEngine, CG">
+<meta property="article:tag" content="Unreal Engine 5, UE5">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://imrocky.com/archives/2022/">
+<link rel="canonical" href="https://imrocky.com/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/">
 
 
 <script id="page-configurations">
@@ -39,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Rocky Matrix</title>
+  <title>UE5 Release的重要feature | Rocky Matrix</title>
   
 
 
@@ -188,96 +190,308 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://imrocky.com/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ER.png">
+      <meta itemprop="name" content="Rocky">
+      <meta itemprop="description" content="Rendering garden.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rocky Matrix">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UE5 Release的重要feature
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-06 18:56:28 / 修改时间：19:14:39" itemprop="dateCreated datePublished" datetime="2022-11-06T18:56:28+08:00">2022-11-06</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 3 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/06/UE5-Release的重要feature/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <p><a target="_blank" rel="noopener" href="https://docs.unrealengine.com/5.0/zh-CN/unreal-engine-5-0-release-notes/">UE5 release note</a><br>
+从UE5的release note里面摘取一些重要的feature和bug修复及优化，当作是一个release note阅读笔记</p>
+<span id="more"></span>
+<h4 id="Feature">Feature</h4>
+<ul>
+<li>luman nanite不用多说</li>
+<li>VSM，移动端有无可能？</li>
+<li>Temporal Super Resolution代替taa，1080-&gt;4k，降低taa重影</li>
+<li><strong>局部曝光处理Local Exposure，精细调节局部曝光</strong></li>
+<li><strong>world partition</strong>重点关注，数据层概念，actor文件
+<ul>
+<li>自动网格化的hlod，自动创建数据驱动的自定义hlod层，优化加载区外的大量静态actor</li>
+<li>大世界坐标</li>
+</ul>
+</li>
+<li>chaos布料+物理场</li>
+<li>Unreal Insights更新
+<ul>
+<li><strong>Memory Insights</strong></li>
+<li><strong>Task Graph Insights</strong>可以看到task的关系，牛逼</li>
+<li>上下文切换</li>
+</ul>
+</li>
+</ul>
+<p>移动平台</p>
+<ul>
+<li>android文件服务器</li>
+<li><strong>android二进制文件改进</strong></li>
+<li>gles3.2 + vulkan dxc</li>
+<li>sss</li>
+<li><strong>dfshadow</strong></li>
+<li>csm cache</li>
+<li>skinCache</li>
+<li><strong>GPU Scene Instancing</strong>，动态实例化物体</li>
+</ul>
+<h4 id="Bug-Fix">Bug Fix</h4>
+<p>重点关注移动端和rendering</p>
+<h4 id="Optimization">Optimization</h4>
+<h4 id="Mobile-Rendering"><strong>Mobile Rendering</strong></h4>
+<p>New:</p>
+<ul>
+<li>
+<p>The mobile deferred and forward lighting calculations are now unified.</p>
+</li>
+<li>
+<p>Added an option to use high quality BRDF on mobile, same as with PC.</p>
+</li>
+<li>
+<p>If a light shading model is not supported on mobile, it will now fall back to the default light shading model.</p>
+</li>
+<li>
+<p>Use EnvBrdf for mobile deferring lighting pass.</p>
+</li>
+<li>
+<p>Mobile now supports the Subsurface and PreIntegrated Skin shading models. Subsurface Profile shading on mobile uses preintegral burley diffusion on ring, just like the PreIntegrated Skin but could be generated at runtime based on Burley inputs.</p>
+</li>
+<li>
+<p>Vulkan now uses G8 format for mobile Ground Truth Ambient Occlusion (GTAO). Enabled mobile AO and PPR on high-end mobile devices.</p>
+</li>
+<li>
+<p>Added support for Mobile Deferred Rendering mode on Android OpenGL ES.</p>
+</li>
+<li>
+<p>Integrated Signed Distance Fields to Mobile Deferred Renderer.</p>
+</li>
+<li>
+<p>Added GL_MAX_TEXTURE_BUFFER_SIZE to OpenGLES.h to not depend on the extension GL_MAX_TEXTURE_BUFFER_SIZE_EXT.</p>
+</li>
+<li>
+<p>The variable r.MobileNumDynamicPointLights is now read from the platform .ini file instead of from the project console variable. The console variable r.MobileNumDynamicPointLights was added to the shader keystring.</p>
+</li>
+<li>
+<p>Disabled Parallel RDG for Mobile Platforms from the RenderGraph.</p>
+</li>
+<li>
+<p>Hair Materials now directly use the Hair Shading Model instead of doing so with a FeatureLevelSwitchExpression, improving hair Shading Model support on mobile.</p>
+</li>
+<li>
+<p>Added support for a Skin Cache on mobile platforms.</p>
+</li>
+<li>
+<p>Set Fast Approximate Anti-Aliasing (FXAA) quality to 0 on mobile platforms by default.</p>
+</li>
+<li>
+<p>Added an option for projects to disable support for per-pixel Material shading models on mobile platforms. Use the console variable r.Mobile.AllowPerPixelShadingModels=0.</p>
+</li>
+<li>
+<p>Account for Reflection Capture influence radius when finding closest capture for an object. Fallback to skylight reflection when there are no influencing Reflection Captures on mobile platforms.</p>
+</li>
+<li>
+<p>Removed perspective correct shadow depth shader permutation when its not required on mobile platforms</p>
+</li>
+</ul>
+<p>Improvement:</p>
+<ul>
+<li>Removed NoLightMap shader permutation for Materials that are not using it on mobile platforms.</li>
+</ul>
+<p>Crash Fix:</p>
+<ul>
+<li>Fixed a crash on mobile while rendering custom depth primitives that require scene texture access.</li>
+</ul>
+<p>Bug Fix:</p>
+<ul>
+<li>
+<p>Fixed an issue where the brightness of the Reflection Captures couldn’t be changed at runtime on mobile.</p>
+</li>
+<li>
+<p>Fixed the specular artifacts that would occur on Snapdragon 845 devices.</p>
+</li>
+<li>
+<p>Disabled mobile MSAA if DepthFullPrepass is enabled.</p>
+</li>
+<li>
+<p>Fixed an issue where depth was not stored with fullprepass enabled.</p>
+</li>
+<li>
+<p>Fixed an issue with incorrect depth stencil access flag in mobile multi-view rendering.</p>
+</li>
+<li>
+<p>Integrated mobile Static Lighting when Distance Fields are enabled.</p>
+</li>
+<li>
+<p>Enqueue FrameSyncEvent ReleaseResource on the Render Thread when in the RHI thread in OpenGLViewport.</p>
+</li>
+<li>
+<p>Resolved a Depth issue with Editor Primitives in Mobile Preview.</p>
+</li>
+<li>
+<p>Implemented a Binary Cache fix for the Compute shader and fixed calculation of ShaderLib Processing time.</p>
+</li>
+<li>
+<p>Fixed a bug that caused Editor to stall in the Material Editor while in Mobile Preview.</p>
+</li>
+<li>
+<p>Fixed Custom Stencil and Depth on mobile by making them not always memoryless. This changes the logic back to the way it was implemented in SceneRenderTargets.</p>
+</li>
+<li>
+<p>Resolve issues with texture mip generation at runtime on Android devices running Vulkan.</p>
+</li>
+<li>
+<p>Resolved an issue preventing PerlinNoise3D texture from correctly initializing on mobile platforms.</p>
+</li>
+<li>
+<p>Allow access to CustomDepth and CustomStencil textures in Decal Materials for mobile platforms.</p>
+</li>
+</ul>
+<p>Removed:</p>
+<ul>
+<li>
+<p>Removed IsMobileDistanceFieldShadowingEnabled.</p>
+</li>
+<li>
+<p>Removed the shader define MOBILE_PROPAGATE_ALPHA, and temporarily removed premultiply alpha. FXAA luminance calculation was moved from the tonemapper to FXAA when MobilePropagateAlpha is enabled.</p>
+</li>
+<li>
+<p>Removed the OpacitySceneCapturePass from MobileSceneCapture since Depth is now stored in a different Render target. Moved everything to the shared SceneCaptureRendering file and removed MobileSceneCapture.usf.</p>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-11-06T18:56:28+08:00"
-              content="2022-11-06">
-          11-06
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Rocky
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://imrocky.com/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/" title="UE5 Release的重要feature">https://imrocky.com/2022/11/06/UE5-Release的重要feature/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/" itemprop="url">
-            <span itemprop="name">UE5 Release的重要feature</span>
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-11-05T16:42:51+08:00"
-              content="2022-11-05">
-          11-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/05/Blog%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97%E6%B1%87%E6%80%BB/" itemprop="url">
-            <span itemprop="name">Blog搭建指南汇总</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-11-05T11:14:47+08:00"
-              content="2022-11-05">
-          11-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/05/%E6%83%B3%E6%B3%95/" itemprop="url">
-            <span itemprop="name">想法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Unreal-Engine-5-UE5/" rel="tag"><i class="fa fa-tag"></i> Unreal Engine 5, UE5</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/05/Blog%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97%E6%B1%87%E6%80%BB/" rel="prev" title="Blog搭建指南汇总">
+      <i class="fa fa-chevron-left"></i> Blog搭建指南汇总
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -324,6 +538,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Feature"><span class="nav-number">1.</span> <span class="nav-text">Feature</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bug-Fix"><span class="nav-number">2.</span> <span class="nav-text">Bug Fix</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optimization"><span class="nav-number">3.</span> <span class="nav-text">Optimization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mobile-Rendering"><span class="nav-number">4.</span> <span class="nav-text">Mobile Rendering</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -500,6 +715,26 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://imrocky.com/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/";
+    this.page.identifier = "2022/11/06/UE5-Release的重要feature/";
+    this.page.title = "UE5 Release的重要feature";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://imrocky.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>
