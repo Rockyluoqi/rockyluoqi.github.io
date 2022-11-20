@@ -20,20 +20,24 @@
     var CONFIG = {"hostname":"www.imrocky.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Disqus 评论","order":-1}},"activeClass":"disqus"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Rendering garden.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://www.imrocky.com/categories/index.html">
+  <meta name="description" content="Epic在上周正式推出了ue5.1，有一些比较重要的特性将在这里做简要介绍，有哪些渲染向更新以及可以用在移动端的特性也将重点介绍。作为一个小的总结，梳理引擎更新的思路和发展的脉络。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UE5.1 ReleaseNotes关键特性速览">
+<meta property="og:url" content="https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/index.html">
 <meta property="og:site_name" content="Rocky Matrix">
-<meta property="og:description" content="Rendering garden.">
+<meta property="og:description" content="Epic在上周正式推出了ue5.1，有一些比较重要的特性将在这里做简要介绍，有哪些渲染向更新以及可以用在移动端的特性也将重点介绍。作为一个小的总结，梳理引擎更新的思路和发展的脉络。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-05T03:13:55.000Z">
-<meta property="article:modified_time" content="2022-11-06T11:28:57.459Z">
+<meta property="og:image" content="https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/top.png">
+<meta property="og:image" content="https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/strata.png">
+<meta property="og:image" content="https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/ComputeGraph.png">
+<meta property="article:published_time" content="2022-11-20T08:32:01.000Z">
+<meta property="article:modified_time" content="2022-11-20T11:05:41.234Z">
 <meta property="article:author" content="Rocky">
 <meta property="article:tag" content="UnrealEngine, CG">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/top.png">
 
-<link rel="canonical" href="https://www.imrocky.com/categories/">
+<link rel="canonical" href="https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/">
 
 
 <script id="page-configurations">
@@ -41,13 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>categories | Rocky Matrix
-</title>
+  <title>UE5.1 ReleaseNotes关键特性速览 | Rocky Matrix</title>
   
 
 
@@ -190,51 +193,177 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ER.png">
+      <meta itemprop="name" content="Rocky">
+      <meta itemprop="description" content="Rendering garden.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rocky Matrix">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UE5.1 ReleaseNotes关键特性速览
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2022-11-20 16:32:01 / 修改时间：19:05:41" itemprop="dateCreated datePublished" datetime="2022-11-20T16:32:01+08:00">2022-11-20</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/20/UE5-1-ReleaseNotes关键特性速览/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="top.png" alt="Top"><br>
+Epic在上周正式推出了<a target="_blank" rel="noopener" href="https://docs.unrealengine.com/5.1/en-US/unreal-engine-5.1-release-notes/">ue5.1</a>，有一些比较重要的特性将在这里做简要介绍，有哪些渲染向更新以及可以用在移动端的特性也将重点介绍。作为一个小的总结，梳理引擎更新的思路和发展的脉络。</p>
+<span id="more"></span>
+<p>可以看到官方导览中Lumen，Nanite和vsm仍旧是花费最多的更新部分。WorldPartition也有所改进。虚拟制片等特性就不提了。</p>
+<h4 id="Lumen">Lumen</h4>
+<p><strong>Lumen</strong>的Two-Sided Foliage相当好看，也就文章开头的图片。stochastic semi-transparent distance field ray trace听着就很高大上，半透明距离场有点意思可以解决过遮挡问题。还有一些关于降噪，反射方面的更新，大家可以按需了解。</p>
+<h4 id="Nanite"><strong>Nanite</strong></h4>
+<p>现在可以使用双面材质了，高面数的Foliage游刃有余，但仍旧不是一个太成熟的方案，还需要更多的改进和测试，WPO都是beta，那还是再等等吧。实验性支持了地形，还是比较关键的特性，期待。</p>
+<h4 id="TSR"><strong>TSR</strong></h4>
+<p>改进，半透明的问题不知道改进到了何种程度，flickering和moire有所优化，ghost改进，temporal的大坑持续改进中。</p>
+<p><strong>PathTracer</strong>的一大堆优化</p>
+<h4 id="GPU-Lightmass"><strong>GPU Lightmass</strong></h4>
+<p>没想到epic还在烘焙上持续更新，也算是给手游和一些基于烘焙的项目的或多或少的支持，可以尝试一下，之前测试是GPU的烘焙效果还是达不到CPU Lightmass。其中一个比较有意思的点是优化了VLM的探针数量，可以下降25%，而且GPU显存也能节省3/4，有点东西。</p>
+<h4 id="半透明的覆盖材质"><strong>半透明的覆盖材质</strong></h4>
+<p>官方终于实现了2 pass的材质系统，这么简单的需求官方终于做了，看介绍说是用在半透明材质做效果上，其实描边也能用这个材质槽完成。</p>
+<h4 id="Strata材质"><strong>Strata材质</strong></h4>
+<p>为了支持这个材质系统，ue更新了大部分原有shader，可以混合多种shading model渲染，上分层材质我能想到epic的思路是想更统一和简化一种制作规范，在material shader中解决更多问题而不是更繁杂的shader外配置，为物体带来更加丰富的材质表现。试想下面火山材质和single layer water的混合是不是很有意思。clear coat混合更酷炫的车型外观。</p>
+<p><img src="strata.png" alt="Strata"></p>
+<h4 id="Texture-and-Texture-Asset"><strong>Texture and Texture Asset</strong></h4>
+<p>加入了R32f和RGBA32F通道位数更多的texture格式。</p>
+<p>材质编辑器中的一些Material Expression现在可以直接在编辑器中调节值了，不用点去detail改default value.</p>
+<h4 id="Light-Mixer"><strong>Light Mixer</strong></h4>
+<p>调节场景整体光源更加方便，在为了诸如动态光照效果去调灯的时候方便一些，可以以此为底盘二次开发符合项目需要的Mixer。</p>
+<h4 id="VSM"><strong>VSM</strong></h4>
+<p>的远距离local light渲染，诸如点光 spot light等可以在远处也可以渲染出阴影。，优化了效率。</p>
+<h4 id="World-Partition"><strong>World Partition</strong></h4>
+<p>DataLayer拆成了两个独立的部分，一种是world层面的资源，一种是特定于world的资源，等于给datalayer又加了一层子layer，项目组也可以继续扩展这种layer层级。<br>
+Epic提到data layer适合创建相同world的变体，可能也是这种改动的考虑。<br>
+WP HLOD layer提供了对Water System的支持。以及一些actor编辑协作上的更新。<br>
+LWC可以支持到88000000千米范围了。</p>
+<h4 id="Animation">Animation</h4>
+<p>Deformer Framework，Epic为ML Deformer开发了一个新的框架，用ML来为deformer增加更加准确的解算。可以去关注UOD2022的演讲录像，王弥做了很多分享。其中还有一个比较有意思的compute framework，现在ue可以让非programmer更容易上手进行compute shader的编程了，也做了图形化系统叫做Compute Graph，详情也可以去看这次演讲，这里放一个架构图大家感受一下，类似材质编辑器。<br>
+<img src="ComputeGraph.png" alt="ComputeGraph"></p>
+<p>Motion Matching集成进ue5，少量动画自动生成更匹配动作的blend pose<br>
+其他的动画的同学可以自行去看release note</p>
+<h4 id="Mobile">Mobile</h4>
+<p>最后我们看一下最关注的移动平台更新，延迟着色正式发布，经过多个版本的迭代终于趋向稳定，支持了一些新的shading model，通过各种魔改gbuffer format完成的，刘伟有分享过。其他特性基本5.0.3也都实现了。统一了shader compiler为DXR，移动平台shader大增强，微软强大社区引入。为移动平台新增精度选项，关于移动平台的精度问题，我会再写一篇文章来讲一下。<br>
+cluster光源的支持及其反射支持，这块官方一比带过其实做了大量的移植工作，但实际性能可能并不理想。<br>
+PSO上会逐资产分解为PSO cache，粒度更小，按需编译，减少内存占用。<br>
+Android OGl和Vulkan用并行加速了PSO的预编译速度。在移动预览上可以查看更多shader platform的效果了。Android vulkan和Metal iOS有不同的渲染设置。</p>
+<p>基本上速览就到这了，如果对物理和gpp，人工智能，niagara，Insights需要更多了解，可以自行查看更多的release note细节。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Rocky
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/" title="UE5.1 ReleaseNotes关键特性速览">https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes关键特性速览/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 1 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/UE5/">UE5</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
         
-      </div>
-      
-      
-      
-    </div>
-    
 
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/06/UE5-Release%E7%9A%84%E9%87%8D%E8%A6%81feature/" rel="prev" title="UE5 Release的重要feature">
+      <i class="fa fa-chevron-left"></i> UE5 Release的重要feature
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
 
 
           </div>
@@ -292,6 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lumen"><span class="nav-number">1.</span> <span class="nav-text">Lumen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nanite"><span class="nav-number">2.</span> <span class="nav-text">Nanite</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TSR"><span class="nav-number">3.</span> <span class="nav-text">TSR</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GPU-Lightmass"><span class="nav-number">4.</span> <span class="nav-text">GPU Lightmass</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%8A%E9%80%8F%E6%98%8E%E7%9A%84%E8%A6%86%E7%9B%96%E6%9D%90%E8%B4%A8"><span class="nav-number">5.</span> <span class="nav-text">半透明的覆盖材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strata%E6%9D%90%E8%B4%A8"><span class="nav-number">6.</span> <span class="nav-text">Strata材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Texture-and-Texture-Asset"><span class="nav-number">7.</span> <span class="nav-text">Texture and Texture Asset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Light-Mixer"><span class="nav-number">8.</span> <span class="nav-text">Light Mixer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VSM"><span class="nav-number">9.</span> <span class="nav-text">VSM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#World-Partition"><span class="nav-number">10.</span> <span class="nav-text">World Partition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Animation"><span class="nav-number">11.</span> <span class="nav-text">Animation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mobile"><span class="nav-number">12.</span> <span class="nav-text">Mobile</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -479,9 +609,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://www.imrocky.com/categories/index.html";
-    this.page.identifier = "categories/index.html";
-    this.page.title = "categories";
+    this.page.url = "https://www.imrocky.com/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/";
+    this.page.identifier = "2022/11/20/UE5-1-ReleaseNotes关键特性速览/";
+    this.page.title = "UE5.1 ReleaseNotes关键特性速览";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
