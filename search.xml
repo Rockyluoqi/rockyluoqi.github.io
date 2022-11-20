@@ -20,7 +20,7 @@
   <entry>
     <title>UE5.1 ReleaseNotes关键特性速览</title>
     <url>/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/</url>
-    <content><![CDATA[<p><img src="top.png" alt="Top"><br>
+    <content><![CDATA[<p><img src="/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/top.png" alt="Top"><br>
 Epic在上周正式推出了<a href="https://docs.unrealengine.com/5.1/en-US/unreal-engine-5.1-release-notes/">ue5.1</a>，有一些比较重要的特性将在这里做简要介绍，有哪些渲染向更新以及可以用在移动端的特性也将重点介绍。作为一个小的总结，梳理引擎更新的思路和发展的脉络。</p>
 <span id="more"></span>
 <p>可以看到官方导览中Lumen，Nanite和vsm仍旧是花费最多的更新部分。WorldPartition也有所改进。虚拟制片等特性就不提了。</p>
@@ -37,7 +37,7 @@ Epic在上周正式推出了<a href="https://docs.unrealengine.com/5.1/en-US/unr
 <p>官方终于实现了2 pass的材质系统，这么简单的需求官方终于做了，看介绍说是用在半透明材质做效果上，其实描边也能用这个材质槽完成。</p>
 <h4 id="Strata材质"><strong>Strata材质</strong></h4>
 <p>为了支持这个材质系统，ue更新了大部分原有shader，可以混合多种shading model渲染，上分层材质我能想到epic的思路是想更统一和简化一种制作规范，在material shader中解决更多问题而不是更繁杂的shader外配置，为物体带来更加丰富的材质表现。试想下面火山材质和single layer water的混合是不是很有意思。clear coat混合更酷炫的车型外观。</p>
-<p><img src="strata.png" alt="Strata"></p>
+<p><img src="/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/strata.png" alt="Strata"></p>
 <h4 id="Texture-and-Texture-Asset"><strong>Texture and Texture Asset</strong></h4>
 <p>加入了R32f和RGBA32F通道位数更多的texture格式。</p>
 <p>材质编辑器中的一些Material Expression现在可以直接在编辑器中调节值了，不用点去detail改default value.</p>
@@ -52,7 +52,7 @@ WP HLOD layer提供了对Water System的支持。以及一些actor编辑协作�
 LWC可以支持到88000000千米范围了。</p>
 <h4 id="Animation">Animation</h4>
 <p>Deformer Framework，Epic为ML Deformer开发了一个新的框架，用ML来为deformer增加更加准确的解算。可以去关注UOD2022的演讲录像，王弥做了很多分享。其中还有一个比较有意思的compute framework，现在ue可以让非programmer更容易上手进行compute shader的编程了，也做了图形化系统叫做Compute Graph，详情也可以去看这次演讲，这里放一个架构图大家感受一下，类似材质编辑器。<br>
-<img src="ComputeGraph.png" alt="ComputeGraph"></p>
+<img src="/2022/11/20/UE5-1-ReleaseNotes%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E9%80%9F%E8%A7%88/ComputeGraph.png" alt="ComputeGraph"></p>
 <p>Motion Matching集成进ue5，少量动画自动生成更匹配动作的blend pose<br>
 其他的动画的同学可以自行去看release note</p>
 <h4 id="Mobile">Mobile</h4>
@@ -62,6 +62,15 @@ PSO上会逐资产分解为PSO cache，粒度更小，按需编译，减少内�
 Android OGl和Vulkan用并行加速了PSO的预编译速度。在移动预览上可以查看更多shader platform的效果了。Android vulkan和Metal iOS有不同的渲染设置。</p>
 <p>基本上速览就到这了，如果对物理和gpp，人工智能，niagara，Insights需要更多了解，可以自行查看更多的release note细节。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>想法</title>
+    <url>/2022/11/05/%E6%83%B3%E6%B3%95/</url>
+    <content><![CDATA[<p>记录从此开始</p>
+]]></content>
+      <tags>
+        <tag>Self</tag>
+      </tags>
   </entry>
   <entry>
     <title>UE5 Release的重要feature</title>
@@ -231,15 +240,6 @@ Android OGl和Vulkan用并行加速了PSO的预编译速度。在移动预览上
       <tags>
         <tag>Unreal Engine 5</tag>
         <tag>UE5</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>想法</title>
-    <url>/2022/11/05/%E6%83%B3%E6%B3%95/</url>
-    <content><![CDATA[<p>记录从此开始</p>
-]]></content>
-      <tags>
-        <tag>Self</tag>
       </tags>
   </entry>
 </search>
