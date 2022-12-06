@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.imrocky.com/2022/12/06/A-Test/</loc>
-    
-    <lastmod>2022-12-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.imrocky.com/2022/11/20/UE5%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E7%B2%BE%E5%BA%A6%E5%B0%8F%E5%9D%91/</loc>
     
     <lastmod>2022-11-20</lastmod>
@@ -115,6 +106,13 @@
   </url>
   
   <url>
+    <loc>https://www.imrocky.com/tags/Self/</loc>
+    <lastmod>2022-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.imrocky.com/tags/Precision/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -137,13 +135,6 @@
   
   <url>
     <loc>https://www.imrocky.com/tags/mobile/</loc>
-    <lastmod>2022-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.imrocky.com/tags/Self/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
