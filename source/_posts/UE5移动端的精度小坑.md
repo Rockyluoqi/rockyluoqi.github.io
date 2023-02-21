@@ -30,3 +30,24 @@ AdditionalDefines.SetDefine(TEXT("FORCE_FLOATS"), (uint32)1);
 
 更新在ue5.1 release中，加入了对移动平台的单独设置，粒度更小一些，推荐设置一下。
 ![4](UE5移动端的精度小坑/4.png)
+
+---
+更新一下UE5.1最新的修改
+
+Epic在UE5.1版本中更新了对iOS/Metal平台的半精度支持，稍微看看它的实现，[commit在这](https://github.com/EpicGames/UnrealEngine/commit/4e14e3f3864a994379da51567791966597629589#diff-5963bff9ef52bec27f0a28bf16791d7b93d16018199341055438477f1fe14b17)
+
+这是一个稍微有些规模的改动，但很有用
+
+首先去掉了之前强制写死ForceFloats的一堆define
+
+在编译端做了一些工作
+
+MetalDerivedData.cpp中的这个函数Patch16bitInHlslSource很有意思，在UE5中统一将shader编译器换成了DXC，而DXC是不支持half精度的Texture和Buffer，会引发layout错误，统一将hlsl中的half换成了float。请注意这个编译器限制。
+
+同时修改中还处理了很多不能用half的情况，比如Spirv中对fastNormalize的参数就不能使用half。
+
+但是在platform的修改只有下面这一处，也就是很有限的地方替换float，Epic并没有大规模支持，这个修改机制还在测试，在BaseEngine.ini还是将IOSRuntimeSettings默认ForceFloats = true。如果想尝试可以自己在float的地方改成下面比如HALF_TYPE的def。虽然暂时没有在PS中的转译大规模启用，但是它用在了另外一个重要的地方。
+![5](UE5移动端的精度小坑/5.png)
+可以看到修改在MetalDerivedData.cpp中，PatchSpecialTextureInHlslSource函数中添加了half的支持，可以看出这个函数只处理gl_LastFragData，也就是和FrameBuffer的格式有关系，读写的带宽可以减少一半，对移动端简直是天使的馈赠。遗憾的是，可以观察到，只有PostProcess的部分Pass有所应用，需要更进一步的测试。但是前面DXC的限制不是一个好消息，希望可以在Texture和Buffer也可以尽快应用吧，进一步减少读写带宽。虽然特性有点瘸腿，但是方向总是好的，读者如果有兴趣也可以魔改一下看看是不是有所收益。
+![5](UE5移动端的精度小坑/6.png)
+![5](UE5移动端的精度小坑/7.png)
